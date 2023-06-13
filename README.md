@@ -1,32 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# password_generator
+###A password generator created in python
 
-Welcome,
+This code implements a password generator with different options for generating passwords. It uses the argon2 library for hashing passwords and provides options for generating diceware passphrases, random passwords, and testing against commonly used passwords.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+Installation
+To use this code, you need to have python and the argon2 library installed. You can install it using pip:
 
-## Reminders
+pip install python
+pip install argon2-cffi
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+##Usage
+You will be prompted to choose one of the following options:
 
-## Creating the Heroku app
+Argon2: Enter a password and generate an Argon2 password hash.
+Diceware: Generate a diceware passphrase.
+Random: Generate a random password with a specified length.
+Test Against Commonly Used Passwords: Enter a password to check if it is commonly used.
+Based on your choice, you will be prompted for additional input, and the generated password or result will be displayed.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Customization
+The code includes a list of commonly used passwords (common_passwords). You can add more commonly used passwords to this list if desired.
 
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+Dependencies
+argon2: This library is used for password hashing. Install it using pip install argon2-cffi.
+Note
+Please ensure that you use the generated passwords responsibly and follow best practices for password security.
