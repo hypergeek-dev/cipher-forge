@@ -1,1 +1,1 @@
-# Your requirements go here
+python == 2.4
