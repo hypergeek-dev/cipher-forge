@@ -45,7 +45,9 @@ class Diceware:
             passphrase += random.choice(self.diceware_word_list) + \
                 random.choice(string.punctuation)
 
-        passphrase += random.choice(self.diceware_word_list).capitalize()
+        passphrase += random.choice(self.diceware_word_list)
+        passphrase = passphrase.capitalize()
+
 
         remaining_length = passphrase_length - len(passphrase)
         for _ in range(remaining_length):
