@@ -41,8 +41,12 @@ Follow the on-screen instructions to validate your password and generate a new o
 This project is the third of five milestone projects that need to be completed to obtain the Full Stack Development Diploma from Code Institute. The required technology for this project is Python.
 
 ## Features
-Password Validation
+### Password Validation
 Cyber-Forge validates your password against a list of commonly known passwords.
+### Password Entropy Calculation
+Your generated password has possibility to be calculated in strength and assesed.
+
+
 
 ### Enter a password to test its commonness.
 Receive feedback on whether the password is commonly known or not.

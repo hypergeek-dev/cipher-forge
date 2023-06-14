@@ -152,35 +152,53 @@ def main():
         pool_size = len(diceware.diceware_word_list) + len(string.punctuation)
         entropy = calculate_entropy(pool_size, passphrase_length)
         entropy_strength = get_entropy_strength(entropy)
-        print("\nYour passwords strength:", entropy,"bits")
-        print(entropy_strength,"\n")
+        print("\nYour passwords strength:", entropy, "bits")
+        print(entropy_strength, "\n")
 
-    else:
-        exit()
+        # Calculate password uniqueness
+        min_length = 6
+        max_length = 16
+        word_list_size = 2059
+        special_symbol_count = len(string.punctuation)
+        lowercase_letter_count = 26
 
-    # Calculate password uniqueness
-    min_length = 6
-    max_length = 16
-    word_list_size = 2059
-    special_symbol_count = len(string.punctuation)
-    lowercase_letter_count = 26
+        total_combinations = 0
 
-    total_combinations = 0
+        for length in range(min_length, max_length + 1):
+            num_special_symbols = length - 1
+            num_word_choices = length - num_special_symbols
+            combinations = (
+                    (word_list_size + special_symbol_count + lowercase_letter_count) **
+                    num_word_choices * (special_symbol_count ** num_special_symbols)
+            )
+            total_combinations += combinations
 
-    for length in range(min_length, max_length + 1):
-        num_special_symbols = length - 1
-        num_word_choices = length - num_special_symbols
-        combinations = (
-            (word_list_size + special_symbol_count + lowercase_letter_count) **
-            num_word_choices * (special_symbol_count ** num_special_symbols)
-        )
-        total_combinations += combinations
+        readable_combinations = humanize.intword(total_combinations)
 
-    readable_combinations = humanize.intword(total_combinations)
+        print(Fore.YELLOW + "This password is uniquely created, out of:\n" +
+              str(readable_combinations) + " possible combinations" +
+              Style.RESET_ALL)
 
-    print(Fore.YELLOW + "This password is uniquely created, out of:\n" +
-          str(readable_combinations) + " possible combinations" +
-          Style.RESET_ALL)
+        choice = prompt_user("Do you want to generate another password? (yes/no): ", ["yes", "no"])
+
+        while choice == "yes":
+            passphrase_length = prompt_user_integer(
+                f"Enter the desired password length ({min_length}-{max_length}): ",
+                min_length,
+                max_length
+            )
+            passphrase = diceware.generate_diceware_passphrase(passphrase_length)
+            print("Generated password:", passphrase)
+
+            # Calculate password entropy
+            entropy = calculate_entropy(pool_size, passphrase_length)
+            entropy_strength = get_entropy_strength(entropy)
+            print("\nYour passwords strength:", entropy, "bits")
+            print(entropy_strength, "\n")
+
+            choice = prompt_user("Do you want to generate another password? (yes/no): ", ["yes", "no"])
+
+    print("\n Thank you for using Cipher-Forge! Have a great day!")
 
 
 if __name__ == "__main__":
