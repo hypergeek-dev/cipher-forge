@@ -57,60 +57,80 @@ class Diceware:
         return passphrase[:max_length]
 
 
-# Introduction
-print(
-    Fore.CYAN + "Introducing Cyber-Forge: Your Advanced Password Generator" +
-    Style.RESET_ALL + "\n"
-)
-print("In today's digital age, strong passwords are crucial "
-      "for safeguarding your sensitive information.")
-print("Meet Cyber-Forge, an advanced password generator designed "
-      "to help you create robust passwords that adhere to")
-print("the best practices of password security.\n")
-print("Let's start by checking your current password against "
-      "a list of commonly known passwords.\n")
+def prompt_user(message, valid_responses):
+    response = None
+    while response not in valid_responses:
+        response = input(message).strip().lower()
+    return response
 
-compare = ComparePasswords()
-password = input("Enter a password to test: ")
 
-# Password validation
-if compare.validate_common_password(password):
-    print("Your password is not a commonly known password.")
-    print("We still recommend changing it periodically.")
-else:
-    print(Fore.RED + "Your password is too common.")
-    print("We suggest you change it." + Style.RESET_ALL)
-
-choice = input("Do you want a generated suggestion now? (yes/no): ")
-
-# Generate password suggestion
-if choice.lower() == "yes":
-    diceware = Diceware()
-    passphrase = diceware.generate_diceware_passphrase()
-    print(Fore.GREEN + "Generated password: " + passphrase + Style.RESET_ALL)
-else:
-    exit()
-
-# Calculate password uniqueness
-min_length = 8
-max_length = 16
-word_list_size = 2059
-special_symbol_count = len(string.punctuation)
-lowercase_letter_count = 26
-
-total_combinations = 0
-
-for length in range(min_length, max_length + 1):
-    num_special_symbols = length - 1
-    num_word_choices = length - num_special_symbols
-    combinations = (
-        (word_list_size + special_symbol_count + lowercase_letter_count) **
-        num_word_choices * (special_symbol_count ** num_special_symbols)
+def main():
+    # Introduction
+    print(
+        Fore.CYAN + "Introducing Cyber-Forge: Your Advanced Password Generator" +
+        Style.RESET_ALL + "\n"
     )
-    total_combinations += combinations
+    print("In today's digital age, strong passwords are crucial "
+          "for safeguarding your sensitive information.")
+    print("Meet Cyber-Forge, an advanced password generator designed "
+          "to help you create robust passwords that adhere to")
+    print("the best practices of password security.\n")
+    print("Let's start by checking your current password against "
+          "a list of commonly known passwords.\n")
 
-readable_combinations = humanize.intword(total_combinations)
+    compare = ComparePasswords()
+    password = input("Enter a password to test: ")
 
-print(Fore.YELLOW + "This password is uniquely created, out of: " +
-      str(readable_combinations) + " possible " +
-      "combinations" + Style.RESET_ALL)
+    # Sanitize user input
+    password = password.strip()
+
+    # Password validation
+    if compare.validate_common_password(password):
+        print("Your password is not a commonly known password.")
+        print("We still recommend changing it periodically.")
+    else:
+        print(Fore.RED + "Your password is too common.")
+        print("We suggest you change it." + Style.RESET_ALL)
+
+    choice = prompt_user("Do you want a generated suggestion now? (yes/no): ", ["yes", "no"])
+
+    # Generate password suggestion
+    if choice == "yes":
+        diceware = Diceware()
+        passphrase = diceware.generate_diceware_passphrase()
+        print(Fore.GREEN + "Generated password: " + passphrase + Style.RESET_ALL)
+    else:
+        exit()
+
+    # Calculate password uniqueness
+    min_length = 8
+    max_length = 16
+    word_list_size = 2059
+    special_symbol_count = len(string.punctuation)
+    lowercase_letter_count = 26
+
+    total_combinations = 0
+
+    for length in range(min_length, max_length + 1):
+        num_special_symbols = length - 1
+        num_word_choices = length - num_special_symbols
+        combinations = (
+            (word_list_size + special_symbol_count + lowercase_letter_count) **
+            num_word_choices * (special_symbol_count ** num_special_symbols)
+        )
+        total_combinations += combinations
+
+    readable_combinations = humanize.intword(total_combinations)
+
+    print(Fore.YELLOW + "This password is uniquely created, out of: " +
+          str(readable_combinations) + " possible " +
+          "combinations" + Style.RESET_ALL)
+
+
+if __name__ == "__main__":
+    while True:
+        try:
+            main()
+            break
+        except KeyboardInterrupt:
+            print("\nPlease answer the prompts to continue or press Ctrl+C again to exit.\n")
