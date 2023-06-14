@@ -146,7 +146,8 @@ def main():
             max_length
         )
         passphrase = diceware.generate_diceware_passphrase(passphrase_length)
-        print("Generated password:", passphrase)
+        print("Generated password:", Fore.CYAN + passphrase + Style.RESET_ALL)
+
 
         # Calculate password entropy
         pool_size = len(diceware.diceware_word_list) + len(string.punctuation)
