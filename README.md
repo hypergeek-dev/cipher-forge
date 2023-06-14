@@ -66,6 +66,22 @@ The development environment used for this project was GitPod. Regular commits an
 
 The live version of the project was deployed using Heroku.
 
+## Testing
+First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave following results:
+
+6: E302 expected 2 blank lines, found 1
+17: E302 expected 2 blank lines, found 1
+43: E501 line too long (100 > 79 characters)
+57: E305 expected 2 blank lines after class or function definition, found 1
+57: E501 line too long (103 > 79 characters)
+58: E501 line too long (106 > 79 characters)
+59: E501 line too long (160 > 79 characters)
+60: E501 line too long (100 > 79 characters)
+67: E501 line too long (105 > 79 characters)
+69: E501 line too long (96 > 79 characters)
+94: E501 line too long (92 > 79 characters)
+100: E501 line too long (136 > 79 characters)
+
 ## Credits
 For code inspiration, help, and advice, the following resources were used:
 
