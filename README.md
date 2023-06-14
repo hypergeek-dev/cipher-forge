@@ -88,27 +88,20 @@ Passwords should not include sequential or repeated characters or patterns.
 #### Randomness
 Passwords should be generated using a strong random number generator to ensure unpredictability.
 
-
 ## Testing
-First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave following results:
+##### First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave following results
 
-### 1. Run
-6: E302 expected 2 blank lines, found 1
-17: E302 expected 2 blank lines, found 1
-43: E501 line too long (100 > 79 characters)
-57: E305 expected 2 blank lines after class or function definition, found 1
-57: E501 line too long (103 > 79 characters)
-58: E501 line too long (106 > 79 characters)
-59: E501 line too long (160 > 79 characters)
-60: E501 line too long (100 > 79 characters)
-67: E501 line too long (105 > 79 characters)
-69: E501 line too long (96 > 79 characters)
-94: E501 line too long (92 > 79 characters)
-100: E501 line too long (136 > 79 characters)
+#### 1. Run
+3 occasions of "expected 2 blank lines, found 1"
+9 occasions of "line too long (100 > 79 characters)"
 
-### 2. Run
+#### 2. Run
 #### Results:
 All clear, no errors found
+
+## Accreditation
+I like to thank dictionary.com for the wordlists
+and Nordpass.com for their list of 200 most used passwords
 
 ## Credits
 For code inspiration, help, and advice, the following resources were used:
@@ -116,8 +109,6 @@ For code inspiration, help, and advice, the following resources were used:
 #### Code institute
 #### Online references about industrial standards
 #### Youtube with guides on how-to.
-
-
 
 ### Author
 Cyber-Forge was developed by Dennis Jensen.
