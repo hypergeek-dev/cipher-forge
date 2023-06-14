@@ -47,23 +47,8 @@ This project was created by [Your Name] as a demonstration of an advanced passwo
 
 ## License
 
-[Insert your chosen license information here.]
+MIT
 
-Please replace [Your Name] with your actual name and provide the appropriate license information in the License section.
-
-Feel free to customize the README file further to add any additional information, instructions, or sections that you find relevant for your project.
-
-
-
-
-
-User
-You didnt add testing in the template?
-ChatGPT
-Apologies for the oversight. Here's an updated version of the template that includes a Testing section:
-
-markdown
-Copy code
 # Cyber-Forge: Advanced Password Generator
 
 Cyber-Forge is an advanced password generator designed to help you create strong and secure passwords. This tool incorporates the best practices of password security to ensure the passwords generated are robust and resistant to common attacks.
