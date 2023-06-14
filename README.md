@@ -31,6 +31,7 @@ Cyber-Forge relies on the following dependencies:
 - `random` module (built-in)
 - `string` module (built-in)
 - `humanize` module
+- `colorama` module
 
 Make sure you have these dependencies installed before running the script.
 
