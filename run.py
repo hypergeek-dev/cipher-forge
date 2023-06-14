@@ -1,6 +1,7 @@
 import random
 import string
 import humanize
+from colorama import Fore, Style
 
 class ComparePasswords:
     def __init__(self):
@@ -53,7 +54,7 @@ class Diceware:
         return passphrase[:max_length]
 
 # Introduction
-print("Introducing Cyber-Forge: Your Advanced Password Generator\n")
+print(Fore.CYAN + "Introducing Cyber-Forge: Your Advanced Password Generator" + Style.RESET_ALL + "\n")
 print("In today's digital age, strong passwords are crucial for safeguarding your sensitive information.")
 print("Meet Cyber-Forge, an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security.\n")
 print("Let's start by checking your current password against a list of commonly known passwords.\n")
@@ -65,7 +66,7 @@ password = input("Enter a password to test: ")
 if compare.validate_common_password(password):
     print("Your password is not a commonly known password. We still recommend changing it periodically.")
 else:
-    print("Your password is too common. We suggest you change it.")
+    print(Fore.RED + "Your password is too common. We suggest you change it." + Style.RESET_ALL)
 
 choice = input("Do you want a generated suggestion now? (yes/no): ")
 
@@ -73,7 +74,7 @@ choice = input("Do you want a generated suggestion now? (yes/no): ")
 if choice.lower() == "yes":
     diceware = Diceware()
     passphrase = diceware.generate_diceware_passphrase()
-    print("Generated password:", passphrase)
+    print(Fore.GREEN + "Generated password:", passphrase + Style.RESET_ALL)
 else:
     exit()
 
@@ -96,4 +97,4 @@ for length in range(min_length, max_length + 1):
 
 readable_combinations = humanize.intword(total_combinations)
 
-print("This password is uniquely created, out of:", str(readable_combinations), "possible combinations")
+print(Fore.YELLOW + "This password is uniquely created, out of:", str(readable_combinations), "possible combinations" + Style.RESET_ALL)
