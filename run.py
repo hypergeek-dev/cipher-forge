@@ -1,6 +1,10 @@
 import random
 import string
 
+print("Introducing Cyber-Forge: Your Advanced Password Generator\n")
+print("In today's digital age, strong passwords are crucial for safeguarding your sensitive information.")
+print("Meet Cyber-Forge, an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security.\n")
+print("Let's start by checking your current password against a list of commonly known passwords.\n")
 class ComparePasswords:
     def __init__(self):
         self.common_passwords = ["12345", "123456", ...]
