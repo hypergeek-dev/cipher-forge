@@ -73,3 +73,32 @@ if choice.lower() == "yes":
     print("Generated Diceware Passphrase:", passphrase)
 else:
     exit()
+
+min_length = 8
+max_length = 16
+word_list_size = 2059
+special_symbol_count = len(string.punctuation)
+lowercase_letter_count = 26
+
+total_combinations = 0
+
+min_length = 8
+max_length = 16
+word_list_size = 2059
+special_symbol_count = len(string.punctuation)
+lowercase_letter_count = 26
+
+total_combinations = 0
+
+# Iterate over possible passphrase lengths
+for length in range(min_length, max_length + 1):
+    num_special_symbols = length - 1
+    num_word_choices = length - num_special_symbols
+    combinations = (
+        (word_list_size + special_symbol_count + lowercase_letter_count) ** num_word_choices
+    ) * (special_symbol_count ** num_special_symbols)
+    total_combinations += combinations
+
+readable_combinations = humanize.intword(total_combinations)
+
+print("This password is uniquely created, out of:", str(readable_combinations), "possible combinations")
