@@ -30,33 +30,31 @@ class Diceware:
         word_list.extend(self.load_wordlist_from_file("4_letter_wordlist.txt"))
         return word_list
 
-    def generate_diceware_passphrase(self):
+    def generate_diceware_passphrase(self, passphrase_length):
         min_length = 8
         max_length = 16
 
-        # Determine the length of the passphrase
-        passphrase_length = random.randint(min_length, max_length)
+        if passphrase_length < min_length or passphrase_length > max_length:
+            raise ValueError(f"Password length must be between {min_length} and {max_length}.")
 
         num_special_symbols = passphrase_length - 1
 
         # Generate the passphrase
-        passphrase = ''
+        passphrase = ""
         for _ in range(num_special_symbols):
-            passphrase += random.choice(self.diceware_word_list) + \
-                random.choice(string.punctuation)
+            passphrase += random.choice(self.diceware_word_list) + random.choice(string.punctuation)
 
-        passphrase += random.choice(self.diceware_word_list)
-        passphrase = passphrase.capitalize()
+        passphrase += random.choice(self.diceware_word_list).capitalize()
 
-
-        remaining_length = passphrase_length - len(passphrase)
+        remaining_length = max_length - len(passphrase)  
+        remaining_length = min(remaining_length, passphrase_length)
         for _ in range(remaining_length):
             if random.random() < 0.5:
                 passphrase += random.choice(self.diceware_word_list)
             else:
                 passphrase += random.choice(string.punctuation)
 
-        return passphrase[:max_length]
+        return passphrase[:passphrase_length]
 
 
 def prompt_user(message, valid_responses):
@@ -65,9 +63,19 @@ def prompt_user(message, valid_responses):
         response = input(message).strip().lower()
     return response
 
+def prompt_user_integer(message, min_value, max_value):
+    response = None
+    while True:
+        try:
+            response = int(input(message))
+            if min_value <= response <= max_value:
+                return response
+            else:
+                print(f"Please enter a number between {min_value} and {max_value}")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 
 def main():
-    # Introduction
     print(":'######::'####:'########::'##::::'##:'########:'########:::::")
     print("'##... ##:. ##:: ##.... ##: ##:::: ##: ##.....:: ##.... ##::::")
     print(" ##:::..::: ##:: ##:::: ##: ##:::: ##: ##::::::: ##:::: ##::::")
@@ -110,8 +118,15 @@ def main():
     # Generate password suggestion
     if choice == "yes":
         diceware = Diceware()
-        passphrase = diceware.generate_diceware_passphrase()
-        print(Fore.GREEN + "Generated password: " + passphrase + Style.RESET_ALL)
+        min_length = 8
+        max_length = 16
+        passphrase_length = prompt_user_integer(
+            f"Enter the desired password length ({min_length}-{max_length}): ",
+            min_length,
+            max_length
+        )
+        passphrase = diceware.generate_diceware_passphrase(passphrase_length)
+        print("Generated password:", passphrase)
     else:
         exit()
 
