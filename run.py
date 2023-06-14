@@ -67,16 +67,12 @@ def prompt_user(message, valid_responses):
 def main():
     # Introduction
     print(
-        Fore.CYAN + "Introducing Cyber-Forge: Your Advanced Password Generator" +
+        Fore.CYAN + "\nIntroducing Cyber-Forge: Your Advanced Password Generator" +
         Style.RESET_ALL + "\n"
     )
-    print("In today's digital age, strong passwords are crucial "
-          "for safeguarding your sensitive information.")
-    print("Meet Cyber-Forge, an advanced password generator designed "
-          "to help you create robust passwords that adhere to")
-    print("the best practices of password security.\n")
-    print("Let's start by checking your current password against "
-          "a list of commonly known passwords.\n")
+    print("In today's digital age, strong passwords are crucial for\nsafeguarding your sensitive information.\n")
+    print("Meet Cyber-Forge, an advanced password generator designed\nto help you create robust passwords that adhere to\nthe best practices of password security.\n")
+    print("Let's start by checking your current password against\na list of commonly known passwords.\n")
 
     compare = ComparePasswords()
     password = input("Enter a password to test: ")
@@ -122,15 +118,10 @@ def main():
 
     readable_combinations = humanize.intword(total_combinations)
 
-    print(Fore.YELLOW + "This password is uniquely created, out of: " +
-          str(readable_combinations) + " possible " +
-          "combinations" + Style.RESET_ALL)
+    print(Fore.YELLOW + "This password is uniquely created, out of:\n" +
+          str(readable_combinations) + " possible combinations" +
+          Style.RESET_ALL)
 
 
 if __name__ == "__main__":
-    while True:
-        try:
-            main()
-            break
-        except KeyboardInterrupt:
-            print("\nPlease answer the prompts to continue or press Ctrl+C again to exit.\n")
+    main()
