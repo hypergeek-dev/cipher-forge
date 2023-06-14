@@ -83,7 +83,7 @@ def main():
     print(" ##:::::::. #######:: ##:::. ##:. ######::: ########:         ")
 
     print(
-        Fore.CYAN + "Introducing Cyber-Forge: Your Advanced Password Generator" +
+        Fore.CYAN + "Introducing Cipher-Forge: Your Advanced Password Generator" +
         Style.RESET_ALL + "\n"
     )
     print("Let's start by checking your current password against ")
