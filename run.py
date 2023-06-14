@@ -1,6 +1,7 @@
 import random
 import string
 import humanize
+import math
 from colorama import Fore, Style
 
 
@@ -31,13 +32,13 @@ class Diceware:
         return word_list
 
     def generate_diceware_passphrase(self, passphrase_length):
-        min_length = 8
+        min_length = 6
         max_length = 16
 
         if passphrase_length < min_length or passphrase_length > max_length:
             raise ValueError(f"Password length must be between {min_length} and {max_length}.")
 
-        num_special_symbols = passphrase_length - 1
+        num_special_symbols = passphrase_length // 3
 
         # Generate the passphrase
         passphrase = ""
@@ -46,7 +47,7 @@ class Diceware:
 
         passphrase += random.choice(self.diceware_word_list).capitalize()
 
-        remaining_length = max_length - len(passphrase)  
+        remaining_length = max_length - len(passphrase)
         remaining_length = min(remaining_length, passphrase_length)
         for _ in range(remaining_length):
             if random.random() < 0.5:
@@ -63,6 +64,7 @@ def prompt_user(message, valid_responses):
         response = input(message).strip().lower()
     return response
 
+
 def prompt_user_integer(message, min_value, max_value):
     response = None
     while True:
@@ -74,6 +76,24 @@ def prompt_user_integer(message, min_value, max_value):
                 print(f"Please enter a number between {min_value} and {max_value}")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+
+
+def calculate_entropy(pool_size, password_length):
+    entropy = int(password_length * math.log2(pool_size))
+    return entropy
+
+def get_entropy_strength(entropy):
+    if entropy < 28:
+        return "Very Weak; might keep out family members"
+    elif entropy <= 35:
+        return "Weak; should keep out most people, often good for desktop login passwords"
+    elif entropy <= 59:
+        return "Reasonable; fairly secure passwords for network and company passwords"
+    elif entropy <= 127:
+        return "Strong; can be good for guarding financial information"
+    else:
+        return "Very Strong; often overkill"
+
 
 def main():
     print(":'######::'####:'########::'##::::'##:'########:'########:::::")
@@ -118,7 +138,7 @@ def main():
     # Generate password suggestion
     if choice == "yes":
         diceware = Diceware()
-        min_length = 8
+        min_length = 6
         max_length = 16
         passphrase_length = prompt_user_integer(
             f"Enter the desired password length ({min_length}-{max_length}): ",
@@ -127,11 +147,19 @@ def main():
         )
         passphrase = diceware.generate_diceware_passphrase(passphrase_length)
         print("Generated password:", passphrase)
+
+        # Calculate password entropy
+        pool_size = len(diceware.diceware_word_list) + len(string.punctuation)
+        entropy = calculate_entropy(pool_size, passphrase_length)
+        entropy_strength = get_entropy_strength(entropy)
+        print("\nYour passwords strength:", entropy,"bits")
+        print(entropy_strength,"\n")
+
     else:
         exit()
 
     # Calculate password uniqueness
-    min_length = 8
+    min_length = 6
     max_length = 16
     word_list_size = 2059
     special_symbol_count = len(string.punctuation)

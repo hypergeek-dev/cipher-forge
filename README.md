@@ -102,6 +102,8 @@ All clear, no errors found
 ## Accreditation
 I like to thank dictionary.com for the wordlists
 and Nordpass.com for their list of 200 most used passwords
+I also like to thank Iocane.com for the scale on passwordstrength measured in bits
+And omnicalculator.com for the formular on how to calculate Entropy
 
 ## Credits
 For code inspiration, help, and advice, the following resources were used:
