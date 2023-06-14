@@ -9,7 +9,10 @@ print("Let's start by checking your current password against a list of commonly 
 
 class ComparePasswords:
     def __init__(self):
-        self.common_passwords = ["12345", "123456", ...]
+        self.common_passwords = self.load_common_passwords()
+
+    def load_common_passwords(self):
+        return self.load_wordlist_from_file("common_passwords.txt")
 
     def validate_common_password(self, password):
         if password in self.common_passwords:
