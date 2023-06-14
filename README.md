@@ -1,6 +1,9 @@
-# Cyber-Forge: Advanced Password Generator
 
-Cyber-Forge is an advanced password generator designed to help you create strong and secure passwords. This tool incorporates the best practices of password security to ensure the passwords generated are robust and resistant to common attacks.
+#Cyber-Forge: Advanced Password Generator
+
+![Screenshot of the program](cipher-forge.png)
+
+Cyber-Forge is an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security. In today's digital age, strong passwords are crucial for safeguarding your sensitive information. Cyber-Forge generates passwords that are unique, secure, and hard to crack.
 
 ## Repository
 https://github.com/hypergeek-dev/cipher-forge
@@ -8,88 +11,66 @@ https://github.com/hypergeek-dev/cipher-forge
 Live at:
 https://cipher-forge.herokuapp.com/
 
-## Features
+##Introduction
+In today's digital age, strong passwords are crucial for safeguarding your sensitive information. Meet Cyber-Forge, an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security.
 
-- **Common Password Check**: Cyber-Forge checks whether a provided password is commonly known and recommends changing it periodically if it is.
-- **Generated Password Suggestions**: You can choose to generate a strong and unique password using the Diceware algorithm implemented in Cyber-Forge.
-- **Password Uniqueness**: Cyber-Forge calculates and displays the uniqueness of the generated password based on the number of possible combinations.
+##How to Use Cyber-Forge
+Common Password Validation: Cyber-Forge checks if your password is a commonly known password and suggests changing it if necessary.
 
-## Getting Started
+Enter a password to test its commonness.
+Receive feedback on whether the password is commonly known or not.
+Password Generation: If you want a new password suggestion, Cyber-Forge can generate a strong and unique password for you.
 
-To use Cyber-Forge, follow these steps:
+Choose whether to generate a new password suggestion.
+A strong and unique password will be generated and displayed.
+Password Uniqueness: Cyber-Forge calculates the number of possible combinations for the generated password, giving you an idea of its uniqueness.
 
-1. Clone the repository and navigate to the project directory.
-2. Ensure you have the required dependencies installed (Python, `random`, `string`, and `humanize`).
-3. Run the `cyber_forge.py` script.
+##Getting Started
+Prerequisites
+Make sure you have the following installed:
 
-## Usage
+Python (version 3.7 or above)
+colorama library (pip install colorama)
+humanize library (pip install humanize)
+Usage
+Clone this repository and navigate to the project directory.
 
-1. Run the `cyber_forge.py` script.
-2. Follow the on-screen instructions to input your current password and choose whether to generate a new password.
-3. If you choose to generate a password, Cyber-Forge will display the generated password.
-4. After generating a password or validating your current password, Cyber-Forge will calculate and display the uniqueness of the generated password.
+Run the following command to start the password generator:
 
-## Dependencies
+python password_generator.py
+Follow the on-screen instructions to validate your password and generate a new one if desired.
 
-Cyber-Forge relies on the following dependencies:
+##Project Requirements
+This project is the third of five milestone projects that need to be completed to obtain the Full Stack Development Diploma from Code Institute. The required technology for this project is Python.
 
-- Python
-- `random` module (built-in)
-- `string` module (built-in)
-- `humanize` module
-- `colorama` module
+##Features
+Password Validation
+Cyber-Forge validates your password against a list of commonly known passwords.
 
-Make sure you have these dependencies installed before running the script.
+###Enter a password to test its commonness.
+Receive feedback on whether the password is commonly known or not.
+###Password Generation
+Cyber-Forge can generate a strong and unique password for you.
 
-## Credits
+###Choose whether to generate a new password suggestion.
+A strong and unique password will be generated and displayed.
+Password Uniqueness
+Cyber-Forge calculates the number of possible combinations for the generated password, giving you an idea of its uniqueness.
 
-This project was created by [Your Name] as a demonstration of an advanced password generator. It utilizes the Diceware algorithm and incorporates best practices of password security.
+##Technologies Used
+Python
+colorama library
+humanize library
+Testing
+The code has been tested using PEP8 Online to ensure compliance with Python style guidelines.
 
-## License
+##Development and Deployment
+The development environment used for this project was GitPod. Regular commits and pushes to GitHub were conducted to track the development stage and handle version control.
 
-MIT
+The live version of the project was deployed using Heroku.
 
-# Cyber-Forge: Advanced Password Generator
+##Credits
+For code inspiration, help, and advice, the following resources were used:
 
-Cyber-Forge is an advanced password generator designed to help you create strong and secure passwords. This tool incorporates the best practices of password security to ensure the passwords generated are robust and resistant to common attacks.
-
-## Features
-
-- **Common Password Check**: Cyber-Forge checks whether a provided password is commonly known and recommends changing it periodically if it is.
-- **Generated Password Suggestions**: You can choose to generate a strong and unique password using the Diceware algorithm implemented in Cyber-Forge.
-- **Password Uniqueness**: Cyber-Forge calculates and displays the uniqueness of the generated password based on the number of possible combinations.
-
-## Getting Started
-
-To use Cyber-Forge, follow these steps:
-
-1. Clone the repository and navigate to the project directory.
-2. Ensure you have the required dependencies installed (Python, `random`, `string`, and `humanize`).
-3. Run the `run.py` script.
-
-## Dependencies
-
-Cyber-Forge relies on the following dependencies:
-
-- Python
-- `random` module (built-in)
-- `string` module (built-in)
-- `humanize` module
-
-## Usage
-
-1. Run the `run.py` script.
-2. Follow the on-screen instructions to input your current password and choose whether to generate a new password.
-
-## Development
-
-
-## Accreditations
-
-## Testing
-
-Make sure you have these dependencies installed before running the script.
-
-## License
-
-MIT
+Author
+Cyber-Forge was developed by Dennis Jensen.
