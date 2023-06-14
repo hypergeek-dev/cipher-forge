@@ -49,7 +49,6 @@ Receive feedback on whether the password is commonly known or not.
 ### Password Generation
 Cyber-Forge can generate a strong and unique password for you.
 
-### Choose whether to generate a new password suggestion.
 A strong and unique password will be generated and displayed.
 Password Uniqueness
 Cyber-Forge calculates the number of possible combinations for the generated password, giving you an idea of its uniqueness.
