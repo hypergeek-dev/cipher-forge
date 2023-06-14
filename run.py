@@ -14,6 +14,10 @@ class ComparePasswords:
     def load_common_passwords(self):
         return self.load_wordlist_from_file("common_passwords.txt")
 
+    def load_wordlist_from_file(self, filename):
+        with open(filename, "r") as file:
+            return [line.strip() for line in file]
+
     def validate_common_password(self, password):
         if password in self.common_passwords:
             return False
