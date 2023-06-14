@@ -141,7 +141,7 @@ def main():
         min_length = 6
         max_length = 16
         passphrase_length = prompt_user_integer(
-            f"Enter the desired password length ({min_length}-{max_length}): ",
+            f"\n Enter the desired password length ({min_length}-{max_length}): ",
             min_length,
             max_length
         )
