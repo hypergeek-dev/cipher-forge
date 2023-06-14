@@ -112,7 +112,7 @@ def generate_password_suggestion():
     pool_size = len(diceware.diceware_word_list) + len(string.punctuation)
     entropy = calculate_entropy(pool_size, passphrase_length)
     entropy_strength = get_entropy_strength(entropy)
-    print("\nYour password's strength:", entropy, "bits")
+    print("\nYour passwords strength:", entropy, "bits")
     print(entropy_strength, "\n")
 
     # Calculate password uniqueness
