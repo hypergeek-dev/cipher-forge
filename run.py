@@ -89,8 +89,8 @@ def main():
     print("In today's digital age, strong passwords are crucial "
           "for safeguarding your sensitive information.")
     print("Meet Cyber-Forge, an advanced password generator designed "
-          "to help you create robust passwords that adhere to")
-    print("the best practices of password security.\n")
+          "to help you create")
+    print("robust passwords.\n")
     print("Let's start by checking your current password against "
           "a list of commonly known passwords.\n")
 
