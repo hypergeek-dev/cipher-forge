@@ -2,6 +2,12 @@
 
 Cyber-Forge is an advanced password generator designed to help you create strong and secure passwords. This tool incorporates the best practices of password security to ensure the passwords generated are robust and resistant to common attacks.
 
+## Repository
+https://github.com/hypergeek-dev/cipher-forge
+
+Live at:
+https://cipher-forge.herokuapp.com/
+
 ## Features
 
 - **Common Password Check**: Cyber-Forge checks whether a provided password is commonly known and recommends changing it periodically if it is.
