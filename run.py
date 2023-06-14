@@ -72,12 +72,12 @@ if compare.validate_common_password(password):
 else:
     print("Your password is too common. We suggest you change it.")
 
-choice = input("Do you want to do that now? (yes/no): ")
+choice = input("Do you want a generated suggestion now? (yes/no): ")
 
 if choice.lower() == "yes":
     diceware = Diceware()
     passphrase = diceware.generate_diceware_passphrase()
-    print("Generated Diceware Passphrase:", passphrase)
+    print("Generated password:", passphrase)
 else:
     exit()
 
