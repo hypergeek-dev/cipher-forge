@@ -23,18 +23,18 @@ A strong and unique password will be generated and displayed.
 Password Uniqueness: Cyber-Forge calculates the number of possible combinations for the generated password, giving you an idea of its uniqueness.
 
 ## Getting Started
-Prerequisites
+###Prerequisites
 Make sure you have the following installed:
 
 Python (version 3.7 or above)
 colorama library (pip install colorama)
 humanize library (pip install humanize)
-Usage
+
+###Usage
 Clone this repository and navigate to the project directory.
 
 Run the following command to start the password generator:
-
-python password_generator.py
+run.py
 Follow the on-screen instructions to validate your password and generate a new one if desired.
 
 ## Project Requirements
