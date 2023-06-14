@@ -53,6 +53,15 @@ A strong and unique password will be generated and displayed.
 Password Uniqueness
 Cyber-Forge calculates the number of possible combinations for the generated password, giving you an idea of its uniqueness.
 
+## User Stories
+
+- As a user, I want to generate strong and secure passwords to protect my sensitive information.
+- As a user, I want to check if my current password is commonly known and receive recommendations to change it if necessary.
+- As a user, I want the option to generate a password suggestion based on advanced password generation techniques.
+- As a user, I want the generated password to adhere to the best practices of password security.
+- As a user, I want to understand the uniqueness and strength of the generated password in terms of the number of possible combinations.
+- As a user, I want the password generator to be easy to use with clear instructions and prompts.
+
 ## Technologies Used
 Python
 colorama library
@@ -62,13 +71,30 @@ The code has been tested using PEP8 Online to ensure compliance with Python styl
 
 ## Development and Deployment
 The development environment used for this project was GitPod. Regular commits and pushes to GitHub were conducted to track the development stage and handle version control.
-
 The live version of the project was deployed using Heroku.
+
+To generate the wordlist I created a simple webscraper in python, which is added in this repository. With that scraper I was able to create lists of 3-letter words and 4-letter words. Akkreditation for those words are mentioned in a later section of this page.
+
+### My criteria for password generation
+#### Length
+Longer passwords are generally more secure. It is often recommended to use passwords with a minimum length of 8 characters or more.
+As stated in the guidelines formed by NIST. NIST Special Publication 800-63B
+https://pages.nist.gov/800-63-3/sp800-63b.html#SP800-131A
+
+#### Complexity
+Passwords should include a combination of uppercase and lowercase letters, numbers, and special characters. 
+
+#### Avoid Sequential or Repeated Patterns
+Passwords should not include sequential or repeated characters or patterns.
+
+#### Randomness
+Passwords should be generated using a strong random number generator to ensure unpredictability.
+
 
 ## Testing
 First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave following results:
 
-## 1. Run
+### 1. Run
 6: E302 expected 2 blank lines, found 1
 17: E302 expected 2 blank lines, found 1
 43: E501 line too long (100 > 79 characters)
@@ -82,12 +108,18 @@ First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave fol
 94: E501 line too long (92 > 79 characters)
 100: E501 line too long (136 > 79 characters)
 
-## 2. Run
-### Results:
+### 2. Run
+#### Results:
 All clear, no errors found
 
 ## Credits
 For code inspiration, help, and advice, the following resources were used:
+#### Martina Terlevic
+#### Code institute
+#### Online references about industrial standards
+#### Youtube with guides on how-to.
+
+
 
 ### Author
 Cyber-Forge was developed by Dennis Jensen.
