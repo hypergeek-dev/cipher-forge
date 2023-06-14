@@ -88,7 +88,6 @@ Passwords should not include sequential or repeated characters or patterns.
 #### Randomness
 Passwords should be generated using a strong random number generator to ensure unpredictability.
 
-
 ## Testing
 First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave following results:
 
