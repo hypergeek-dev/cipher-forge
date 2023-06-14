@@ -88,8 +88,7 @@ def main():
     )
 
     print("Meet Cyber-Forge, an advanced password generator designed ")
-    print("to help you create")
-    print("robust passwords.\n")
+    print("to help you create robust passwords.\n")
     print("Let's start by checking your current password against "
           "a list of commonly known passwords.\n")
 
