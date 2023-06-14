@@ -86,9 +86,6 @@ def main():
         Fore.CYAN + "Introducing Cyber-Forge: Your Advanced Password Generator" +
         Style.RESET_ALL + "\n"
     )
-
-    print("Meet Cyber-Forge, an advanced password generator designed ")
-    print("to help you create robust passwords.\n")
     print("Let's start by checking your current password against "
           "a list of commonly known passwords.\n")
 
