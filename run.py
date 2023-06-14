@@ -2,26 +2,16 @@ import random
 import string
 import humanize
 
-print("Introducing Cyber-Forge: Your Advanced Password Generator\n")
-print("In today's digital age, strong passwords are crucial for safeguarding your sensitive information.")
-print("Meet Cyber-Forge, an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security.\n")
-print("Let's start by checking your current password against a list of commonly known passwords.\n")
-
 class ComparePasswords:
     def __init__(self):
         self.common_passwords = self.load_common_passwords()
 
     def load_common_passwords(self):
-        return self.load_wordlist_from_file("common_passwords.txt")
-
-    def load_wordlist_from_file(self, filename):
-        with open(filename, "r") as file:
+        with open("common_passwords.txt", "r") as file:
             return [line.strip() for line in file]
 
     def validate_common_password(self, password):
-        if password in self.common_passwords:
-            return False
-        return True
+        return password not in self.common_passwords
 
 class Diceware:
     def __init__(self):
@@ -44,7 +34,6 @@ class Diceware:
         # Determine the length of the passphrase
         passphrase_length = random.randint(min_length, max_length)
 
-        # Calculate the number of special symbols needed
         num_special_symbols = passphrase_length - 1
 
         # Generate the passphrase
@@ -52,10 +41,8 @@ class Diceware:
         for _ in range(num_special_symbols):
             passphrase += random.choice(self.diceware_word_list) + random.choice(string.punctuation)
 
-        # Add a word with a capital letter
         passphrase += random.choice(self.diceware_word_list).capitalize()
 
-        # Fill up the remaining space with random words and symbols
         remaining_length = passphrase_length - len(passphrase)
         for _ in range(remaining_length):
             if random.random() < 0.5:
@@ -63,10 +50,18 @@ class Diceware:
             else:
                 passphrase += random.choice(string.punctuation)
 
-        return passphrase[:max_length]  # Truncate passphrase if it exceeds max_length
+        return passphrase[:max_length]
+
+# Introduction
+print("Introducing Cyber-Forge: Your Advanced Password Generator\n")
+print("In today's digital age, strong passwords are crucial for safeguarding your sensitive information.")
+print("Meet Cyber-Forge, an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security.\n")
+print("Let's start by checking your current password against a list of commonly known passwords.\n")
 
 compare = ComparePasswords()
 password = input("Enter a password to test: ")
+
+# Password validation
 if compare.validate_common_password(password):
     print("Your password is not a commonly known password. We still recommend changing it periodically.")
 else:
@@ -74,6 +69,7 @@ else:
 
 choice = input("Do you want a generated suggestion now? (yes/no): ")
 
+# Generate password suggestion
 if choice.lower() == "yes":
     diceware = Diceware()
     passphrase = diceware.generate_diceware_passphrase()
@@ -81,6 +77,7 @@ if choice.lower() == "yes":
 else:
     exit()
 
+# Calculate password uniqueness
 min_length = 8
 max_length = 16
 word_list_size = 2059
@@ -89,15 +86,6 @@ lowercase_letter_count = 26
 
 total_combinations = 0
 
-min_length = 8
-max_length = 16
-word_list_size = 2059
-special_symbol_count = len(string.punctuation)
-lowercase_letter_count = 26
-
-total_combinations = 0
-
-# Iterate over possible passphrase lengths
 for length in range(min_length, max_length + 1):
     num_special_symbols = length - 1
     num_word_choices = length - num_special_symbols
