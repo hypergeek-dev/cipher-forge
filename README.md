@@ -66,8 +66,6 @@ Cyber-Forge calculates the number of possible combinations for the generated pas
 Python
 colorama library
 humanize library
-Testing
-The code has been tested using PEP8 Online to ensure compliance with Python style guidelines.
 
 ## Development and Deployment
 The development environment used for this project was GitPod. Regular commits and pushes to GitHub were conducted to track the development stage and handle version control.
