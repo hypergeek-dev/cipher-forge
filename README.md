@@ -69,6 +69,7 @@ The live version of the project was deployed using Heroku.
 ## Testing
 First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave following results:
 
+## 1. Run
 6: E302 expected 2 blank lines, found 1
 17: E302 expected 2 blank lines, found 1
 43: E501 line too long (100 > 79 characters)
@@ -82,8 +83,12 @@ First run through, on CI Python Linter on https://pep8ci.herokuapp.com/ gave fol
 94: E501 line too long (92 > 79 characters)
 100: E501 line too long (136 > 79 characters)
 
+## 2. Run
+### Results:
+All clear, no errors found
+
 ## Credits
 For code inspiration, help, and advice, the following resources were used:
 
-Author
+### Author
 Cyber-Forge was developed by Dennis Jensen.
