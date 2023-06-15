@@ -36,14 +36,16 @@ class Diceware:
         max_length = 16
 
         if passphrase_length < min_length or passphrase_length > max_length:
-            raise ValueError(f"Password length must be between {min_length} and {max_length}.")
+            raise ValueError
+            (f"Password length must be between {min_length} and {max_length}.")
 
         num_special_symbols = passphrase_length // 3
 
         # Generate the passphrase
         passphrase = ""
         for _ in range(num_special_symbols):
-            passphrase += random.choice(self.diceware_word_list) + random.choice(string.punctuation)
+            passphrase += random.choice(self.diceware_word_list)
+            + random.choice(string.punctuation)
 
         passphrase += random.choice(self.diceware_word_list).capitalize()
 
@@ -73,7 +75,8 @@ def prompt_user_integer(message, min_value, max_value):
             if min_value <= response <= max_value:
                 return response
             else:
-                print(f"Please enter a number between {min_value} and {max_value}")
+                print(f"Please enter a number between {min_value},
+                      and {max_value}")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
@@ -87,9 +90,11 @@ def get_entropy_strength(entropy):
     if entropy < 28:
         return "Very Weak; might keep out family members"
     elif entropy <= 35:
-        return "Weak; should keep out most people, often good for desktop login passwords"
+        return "Weak; should keep out most people, " \
+         "often good for desktop login passwords"
     elif entropy <= 59:
-        return "Reasonable; fairly secure passwords for network and company passwords"
+        return "Reasonable; fairly secure passwords" \
+         for network and company passwords"
     elif entropy <= 127:
         return "Strong; can be good for guarding financial information"
     else:
@@ -126,15 +131,18 @@ def generate_password_suggestion():
         num_special_symbols = length - 1
         num_word_choices = length - num_special_symbols
         combinations = (
-                (word_list_size + special_symbol_count + lowercase_letter_count) **
-                num_word_choices * (special_symbol_count ** num_special_symbols)
+                (word_list_size + special_symbol_count
+                 + lowercase_letter_count) **
+                num_word_choices * (special_symbol_count **
+                                    num_special_symbols)
         )
         total_combinations += combinations
 
     readable_combinations = humanize.intword(total_combinations)
 
     print(
-        Fore.GREEN + f"There are approximately {readable_combinations} possible passwords of this length." +
+        Fore.GREEN + f"There are approximately {readable_combinations}\
+        possible passwords of this length." +
         Style.RESET_ALL)
 
     return passphrase
@@ -158,7 +166,8 @@ def main():
     print(" ##:::::::. #######:: ##:::. ##:. ######::: ########:         ")
 
     print(
-        Fore.CYAN + "Introducing Cipher-Forge: Your Advanced Password Generator" +
+        Fore.CYAN + "Introducing Cipher-Forge:\
+        Your Advanced Password Generator" +
         Style.RESET_ALL + "\n"
     )
     print("Let's start by checking your current password against ")
@@ -178,12 +187,14 @@ def main():
         print(Fore.RED + "Your password is too common.")
         print("We suggest you change it." + Style.RESET_ALL)
 
-    choice = prompt_user("Do you want a generated suggestion now? (yes/no): ", ["yes", "no"])
+    choice = prompt_user("Do you want a generated suggestion now?\
+    (yes/no): ", ["yes", "no"])
 
     while choice == "yes":
         print("\n# Generate password suggestion")
         passphrase = generate_password_suggestion()
-        choice = prompt_user("Do you want to generate another password? (yes/no): ", ["yes", "no"])
+        choice = prompt_user("Do you want to generate another password?\
+        (yes/no): ", ["yes", "no"])
 
     print("\nThank you for using Cipher-Forge. Stay safe!")
 
