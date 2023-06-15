@@ -14,6 +14,8 @@ class ComparePasswords:
             return [line.strip() for line in file]
 
     def validate_common_password(self, password):
+        if password == "":
+            return False
         return password not in self.common_passwords
 
 
