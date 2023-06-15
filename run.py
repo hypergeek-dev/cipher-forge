@@ -74,8 +74,9 @@ def prompt_user_integer(message, min_value, max_value):
             if min_value <= response <= max_value:
                 return response
             else:
-                print(f"Please enter a number between|\
-                {min_value} and {max_value}.")
+                print(f"Please enter a number between "
+                      f"{min_value} and {max_value}.")
+
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
