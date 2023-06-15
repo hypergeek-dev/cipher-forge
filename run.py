@@ -130,10 +130,10 @@ def generate_password_suggestion():
         num_special_symbols = length - 1
         num_word_choices = length - num_special_symbols
         combinations = (
-                (word_list_size + special_symbol_count
-                 + lowercase_letter_count) **
-                num_word_choices * (special_symbol_count **
-                                    num_special_symbols)
+            (word_list_size + special_symbol_count
+             + lowercase_letter_count) **
+            num_word_choices * (special_symbol_count **
+                                num_special_symbols)
         )
         total_combinations += combinations
 
