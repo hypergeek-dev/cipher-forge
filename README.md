@@ -114,7 +114,7 @@ The development environment used for this project was GitPod. Regular commits an
   <li>I chose the branch I wanted to deploy and enabled automatic deploys.</li>
   <li>I also pressed manually deployment for the first run.</li>
   <li>Heroku started deploying my app based on the selected branch, and I monitored the deployment progress in the activity logs.</li>
-  <li>After the deployment completed, Heroku provided me with the URL of my deployed app:https://cipher-forge.herokuapp.com</li>
+  <li>After the deployment completed, Heroku provided me with the URL of my deployed app:<br>https://cipher-forge.herokuapp.com</li>
 </ul>
 
 ## Creating the wordlists
