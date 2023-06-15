@@ -68,15 +68,14 @@ def prompt_user(message, valid_responses):
 
 
 def prompt_user_integer(message, min_value, max_value):
-    response = None
     while True:
         try:
             response = int(input(message))
             if min_value <= response <= max_value:
                 return response
             else:
-                print(f"Please enter a number between {min_value},
-                      and {max_value}")
+                print(f"Please enter a number between|\
+                {min_value} and {max_value}.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
@@ -91,10 +90,10 @@ def get_entropy_strength(entropy):
         return "Very Weak; might keep out family members"
     elif entropy <= 35:
         return "Weak; should keep out most people, " \
-         "often good for desktop login passwords"
+               "often good for desktop login passwords"
     elif entropy <= 59:
-        return "Reasonable; fairly secure passwords" \
-         for network and company passwords"
+        return "Reasonable; fairly secure passwords " \
+               "for network and company passwords"
     elif entropy <= 127:
         return "Strong; can be good for guarding financial information"
     else:
