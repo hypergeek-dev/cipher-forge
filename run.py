@@ -36,8 +36,8 @@ class Diceware:
         max_length = 16
 
         if passphrase_length < min_length or passphrase_length > max_length:
-            raise ValueError
-            (f"Password length must be between {min_length} and {max_length}.")
+            raise ValueError(f"Password length must be between {min_length}\
+            and {max_length}.")
 
         num_special_symbols = passphrase_length // 3
 
@@ -45,7 +45,7 @@ class Diceware:
         passphrase = ""
         for _ in range(num_special_symbols):
             passphrase += random.choice(self.diceware_word_list)
-            + random.choice(string.punctuation)
+            passphrase += random.choice(string.punctuation)
 
         passphrase += random.choice(self.diceware_word_list).capitalize()
 
