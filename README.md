@@ -125,8 +125,8 @@ To generate the wordlist, I created a simple web scraper in Python, which is add
 
 
 ### 1. Run
-3 occasions of "expected 2 blank lines, found 1"
-9 occasions of "line too long (100 > 79 characters)"
+#### 3 occasions of "expected 2 blank lines, found 1"
+#### 9 occasions of "line too long (100 > 79 characters)"
 
 ### 2. Run
 ### Results:
