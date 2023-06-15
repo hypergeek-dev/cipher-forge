@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: Debug",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}",
+        "env": {},
+        "envFile": "${workspaceFolder}/.env",
+        "stopOnEntry": false,
+        "justMyCode": false,
+        "debugOptions": [],
+        "pythonPath": "${config:python.pythonPath}",
+        "args": []
+      }
+    ]
+  }
+  
