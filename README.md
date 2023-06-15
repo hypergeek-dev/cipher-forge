@@ -1,5 +1,15 @@
 # Cyber-Forge: Advanced Password Generator
 
+----
+
+## On this page
+{:.no_toc}
+
+- TOC
+{:toc}
+
+----
+
 ![Screenshot of the program](cipher-forge.png)
 
 ## Repository
@@ -30,6 +40,10 @@ Python (version 3.7 or above)
 colorama library (pip install colorama)
 humanize library (pip install humanize)
 
+I have simplyfied installing the dependencies through using a script.
+Follow theese steps:
+
+
 ### Usage
 Clone this repository and navigate to the project directory.
 
@@ -43,18 +57,11 @@ This project is the third of five milestone projects that need to be completed t
 ## Features
 ### Password Validation
 Cyber-Forge validates your password against a list of commonly known passwords.
-### Password Entropy Calculation
-Your generated password has possibility to be calculated in strength and assesed.
-
-
-
-### Enter a password to test its commonness.
-Receive feedback on whether the password is commonly known or not.
 ### Password Generation
 Cyber-Forge can generate a strong and unique password for you.
-
-A strong and unique password will be generated and displayed.
-Password Uniqueness
+### Password Entropy Calculation
+Your generated password has possibility to be calculated in strength and assesed.
+### Password Uniqueness
 Cyber-Forge calculates the number of possible combinations for the generated password, giving you an idea of its uniqueness.
 
 ## User Stories
@@ -104,9 +111,9 @@ Passwords should be generated using a strong random number generator to ensure u
 All clear, no errors found
 
 ## Accreditation
-I like to thank dictionary.com for the wordlists
+I like to thank dictionary.com for the wordlists i gained from accessing their website.
 and Nordpass.com for their list of 200 most used passwords
-I also like to thank Iocane.com for the scale on passwordstrength measured in bits
+I also like to thank Iocane.com for the scale on passwords-trength measured in bits
 And omnicalculator.com for the formular on how to calculate Entropy
 
 ## Credits
