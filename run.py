@@ -1,3 +1,4 @@
+import sys
 import random
 import string
 import humanize
@@ -74,8 +75,10 @@ def prompt_user(message, valid_responses):
         while response not in valid_responses:
             response = input(message).strip().lower()
     except KeyboardInterrupt:
+        # Handle the KeyboardInterrupt exception
         print("\nProgram interrupted. Exiting...")
-        response = None
+        sys.exit(0)  # Terminate the program gracefully
+
     return response
 
 
