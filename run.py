@@ -70,8 +70,12 @@ class Diceware:
 
 def prompt_user(message, valid_responses):
     response = None
-    while response not in valid_responses:
-        response = input(message).strip().lower()
+    try:
+        while response not in valid_responses:
+            response = input(message).strip().lower()
+    except KeyboardInterrupt:
+        print("\nProgram interrupted. Exiting...")
+        response = None
     return response
 
 
