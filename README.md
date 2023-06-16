@@ -148,6 +148,9 @@ All clear, no errors found
 ## Bugs
 Through testing, I discovered some potential issues in the code and made some changes to prevent errors caused by incorrect user input:
 
+1. When user is requested to enter a digit, I modified the code to only accept the range requested. 
+2. I modified the program to only accept input with a minimum of one character and exclude CTRL or Fn combinations.
+
 ### **Error Handling**
 I added a safety measure to handle errors in certain parts of the code. For example, when the user enters an invalid number, I made sure the program doesn't break and instead asks them to enter a valid number.
 
