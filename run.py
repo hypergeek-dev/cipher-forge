@@ -37,22 +37,22 @@ class Diceware:
 
     def load_wordlists(self):
         word_list = []
-
-    word_list.extend(self.load_wordlist_from_file(
-        "assets/wordlists/3_letter_wordlist.txt"
-    ))
-
-    word_list.extend(self.load_wordlist_from_file(
-        "assets/wordlists/4_letter_wordlist.txt"))
-    return word_list
+        word_list.extend(self.load_wordlist_from_file(
+            "assets/wordlists/3_letter_wordlist.txt"))
+        word_list.extend(self.load_wordlist_from_file(
+            "assets/wordlists/4_letter_wordlist.txt"))
+        return word_list
 
     def generate_diceware_passphrase(self, passphrase_length):
         min_length = 6
         max_length = 16
 
         if passphrase_length < min_length or passphrase_length > max_length:
-            raise ValueError(f"Password length must be between {min_length}\
-            and {max_length}.")
+            error_message = (
+                f"Password length must be between {min_length} "
+                f"and {max_length}."
+            )
+            raise ValueError(error_message)
 
         num_special_symbols = passphrase_length // 3
 

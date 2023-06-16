@@ -157,7 +157,7 @@ I added a safety measure to handle errors in certain parts of the code. For exam
 ### **Exception Handling**
 I made modifications to a specific function to address a particular problem. If the user provides a passphrase length that is not allowed, I now inform them about the valid range instead of proceeding with incorrect input.
 
-### **Looping***
+### **Looping**
  To avoid any problems caused by incorrect input, I added loops to the code. This way, if the user enters something wrong, they are prompted again until they provide the correct input.
 
 # Accreditation
