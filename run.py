@@ -24,7 +24,8 @@ class ComparePasswords:
             if not re.match(r"^[^\x00-\x1F\x7F]+$", password):
                 return "The password contains invalid characters"
             return "Your password is not a commonly known password.\
- We still recommend changing it periodically."
+ We still recommend changing it"\
+ "periodically."
         except EOFError:
             return "Seems like your input was empty.\
  Please enter something and run me again."
