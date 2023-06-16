@@ -5,6 +5,9 @@ import math
 from colorama import Fore, Style
 
 
+import re
+
+
 class ComparePasswords:
     def __init__(self):
         self.common_passwords = self.load_common_passwords()
@@ -12,6 +15,11 @@ class ComparePasswords:
     def load_common_passwords(self):
         with open("assets/wordlists/common_passwords.txt", "r") as file:
             return [line.strip() for line in file]
+
+    def validate_common_password(self, password):
+        if not re.match(r"^[^\x00-\x1F\x7F]+$", password):
+            return False
+        return password != "" and password not in self.common_passwords
 
     def validate_common_password(self, password):
         if password == "":
@@ -29,9 +37,14 @@ class Diceware:
 
     def load_wordlists(self):
         word_list = []
-        word_list.extend(self.load_wordlist_from_file("assets/wordlists/3_letter_wordlist.txt"))
-        word_list.extend(self.load_wordlist_from_file("assets/wordlists/4_letter_wordlist.txt"))
-        return word_list
+
+    word_list.extend(self.load_wordlist_from_file(
+        "assets/wordlists/3_letter_wordlist.txt"
+    ))
+
+    word_list.extend(self.load_wordlist_from_file(
+        "assets/wordlists/4_letter_wordlist.txt"))
+    return word_list
 
     def generate_diceware_passphrase(self, passphrase_length):
         min_length = 6
