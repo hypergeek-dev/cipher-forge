@@ -21,11 +21,6 @@ class ComparePasswords:
             return False
         return password != "" and password not in self.common_passwords
 
-    def validate_common_password(self, password):
-        if password == "":
-            return False
-        return password not in self.common_passwords
-
 
 class Diceware:
     def __init__(self):
