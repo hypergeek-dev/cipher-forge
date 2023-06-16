@@ -66,16 +66,18 @@ Cyber-Forge calculates the number of possible combinations for the generated pas
 
 1. Clone or download this repository and navigate to the project directory.
 2. Make sure you have the following installed:
-   - Python (version 3.7 or above)
-   - colorama library
-   - humanize library
+   - Python (version 3.7 or above).
+   - colorama library.
+   - humanize library.
 
-   I have simplified installing the dependencies through using a script. Copy/paste and run this in your terminal:
+3. If it´s not already on your system. Visit [https://www.python.org/](https://www.python.org/)
+
+4.   To install the two dependencies. Copy/paste and run this in your terminal:
 
    ```shell
-   chmod +x setup.sh ; ./setup.sh
+  pip install -r requirements.txt
    ```
-3. Run this in the terminal
+5. To run the program itself: 
     ```shell
     run.py
    ```
