@@ -26,10 +26,10 @@ class ComparePasswords:
             return "Your password is not a commonly known password.\
                 We still recommend changing it periodically."
         except EOFError:
-            return "Hello user, it is an EOF exception.\
+            return "Seems like your input was empty.\
             Please enter something and run me again."
         except KeyboardInterrupt:
-            return "Hello user, you have pressed the Ctrl-C button."
+            return "You have pressed the Ctrl-C button."
 
 
 class Diceware:
