@@ -20,13 +20,13 @@ class ComparePasswords:
             if password == "":
                 return "The password is empty"
             if password in self.common_passwords:
-                return Fore.RED + """\nYour password is among the 200
+                return Fore.RED + """\nYour password is amongst the 200
 most used passwords.
 We suggest you change it!
 """ + Style.RESET_ALL
 
             if not re.match(r"^[^\x00-\x1F\x7F]+$", password):
-                return "\nThe password contains invalid characters"
+                return "\nThe password contains invalid characters."
 
             return Fore.GREEN + """\nYour password is not a commonly
 known password.
@@ -174,7 +174,7 @@ def main():
 
     print(
         Fore.CYAN + "Introducing Cipher-Forge: "
-        "Your Advanced Password Generator" +
+        "Your Advanced Password Generator." +
         Style.RESET_ALL + "\n")
     try:
         while True:
