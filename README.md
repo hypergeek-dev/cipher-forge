@@ -1,6 +1,6 @@
 # Cyber-Forge: Advanced Password Generator
 
-![Screenshot of the program](assets/graphics/cipher-forge.png)
+![Screenshot of the program](assets/cipher-forge.png)
 
 ----
 
