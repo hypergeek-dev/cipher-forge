@@ -156,7 +156,6 @@ It is a combination of words from the wordlists with random special symbols/punc
  CI Python Linter on https://pep8ci.herokuapp.com/ gave following results
 
 ### 1. Run
-### **Results:**
 #### 3 occasions of "expected 2 blank lines, found 1"
 #### 9 occasions of "line too long (100 > 79 characters)"
 
@@ -172,16 +171,19 @@ Through testing, I discovered some potential issues in the code and made some ch
 
 ### **Error Handling**
 <br>
+
 ![Screenshot of the program](assets/graphics/wrong_input.webp)<br>
 I added a safety measure to handle errors in certain parts of the code. For example, when the user enters an invalid number, I made sure the program doesn't break and instead asks them to enter a valid number.
 
 ### **Exception Handling**
 <br>
+
 ![Screenshot of the program](assets/graphics/desired_range.webp)<br>
 I made modifications to a specific function to address a particular problem. If the user provides a passphrase length that is not allowed, I now inform them about the valid range instead of proceeding with incorrect input.
 
 ### **Looping**
 <br>
+
 ![Screenshot of the program](assets/graphics/psw_wrong_input.webp)<br>
  To avoid any problems caused by incorrect input, I added loops to the code. This way, if the user enters something wrong, they are prompted again until they provide the correct input.
 
