@@ -41,6 +41,7 @@ Live at: [https://cipher-forge.herokuapp.com/](https://cipher-forge.herokuapp.co
 
 In today's digital age, strong passwords are crucial for safeguarding your sensitive information. Meet Cyber-Forge, an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security.
 <br>
+
 ![Screenshot of the program](assets/graphics/start_screen.webp)
 <br>
 # Features
