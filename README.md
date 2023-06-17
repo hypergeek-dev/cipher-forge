@@ -193,7 +193,7 @@ I made modifications to a specific function to address a particular problem. If 
  To avoid any problems caused by incorrect input, I added loops to the code. This way, if the user enters something wrong, they are prompted again until they provide the correct input.
 
 # Accreditation
-Dictionary.com - For the wordlists accessed from their website.<br>
+Dictionary.com - For the wordlists retrieved from their website.<br>
 Nordpass.com - For providing the list of 200 most used passwords.<br>
 Iocane.com - For the scale on password strength measured in bits.<br>
 Omnicalculator.com - For the formula on how to calculate Entropy.<br>
