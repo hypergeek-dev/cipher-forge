@@ -57,7 +57,7 @@ Cyber-Forge checks if your password is a commonly known password.
 ![Screenshot of the program](assets/graphics/most_know_psw.webp)<br>
 Example of known password.<br>
 ![Screenshot of the program](assets/graphics/not_most_know_psw.webp)<br>
-Example of not known password.<br>
+Example of unknown password.<br>
 
 ## Password Generation
 
