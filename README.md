@@ -1,6 +1,6 @@
 # Cyber-Forge: Advanced Password Generator
 
-![Screenshot of the program](assets/cipher-forge.png)
+![Screenshot of the program](assets/graphics/cipher-forge.webp)
 
 ----
 
@@ -40,26 +40,38 @@ Live at: [https://cipher-forge.herokuapp.com/](https://cipher-forge.herokuapp.co
 # Introduction
 
 In today's digital age, strong passwords are crucial for safeguarding your sensitive information. Meet Cyber-Forge, an advanced password generator designed to help you create robust passwords that adhere to the best practices of password security.
-
+<br>
+![Screenshot of the program](assets/graphics/start_screen.webp)
+<br>
 # Features
 
 ## Common Password Validation
 
-Cyber-Forge checks if your password is a commonly known password and suggests changing it if necessary.
+Cyber-Forge checks if your password is a commonly known password.
 
 - Enter a password to test its commonness.
 - Receive feedback on whether the password is commonly known or not.
+<br>
+
+![Screenshot of the program](assets/graphics/most_know_psw.webp)<br>
+Example of known password.<br>
+![Screenshot of the program](assets/graphics/not_most_know_psw.webp)<br>
+Example of not known password.<br>
 
 ## Password Generation
 
 If you want a new password suggestion, Cyber-Forge can generate a strong and unique password for you.
-
+<br>
+![Screenshot of the program](assets/graphics/long_psw.webp)<br><br>
+Example of long password.<br>
 - Choose whether to generate a new password suggestion.
 - A strong and unique password will be generated and displayed.
-
+<br><br>
+![Screenshot of the program](assets/graphics/short_psw.webp)<br>
+Example of short password.<br>
 ## Password Uniqueness
 
-Cyber-Forge calculates the strength and the number of possible combinations for the generated password, giving you an idea of its uniqueness.
+Cyber-Forge calculates the strength and assesment, giving you an idea of its uniqueness.
 
 # Getting Started
 
@@ -158,12 +170,18 @@ Through testing, I discovered some potential issues in the code and made some ch
 2. I modified the program to only accept input with a minimum of one character and exclude CTRL or Fn combinations.
 
 ### **Error Handling**
+<br>
+![Screenshot of the program](assets/graphics/wrong_input.webp)<br>
 I added a safety measure to handle errors in certain parts of the code. For example, when the user enters an invalid number, I made sure the program doesn't break and instead asks them to enter a valid number.
 
 ### **Exception Handling**
+<br>
+![Screenshot of the program](assets/graphics/desired_range.webp)<br>
 I made modifications to a specific function to address a particular problem. If the user provides a passphrase length that is not allowed, I now inform them about the valid range instead of proceeding with incorrect input.
 
 ### **Looping**
+<br>
+![Screenshot of the program](assets/graphics/psw_wrong_input.webp)<br>
  To avoid any problems caused by incorrect input, I added loops to the code. This way, if the user enters something wrong, they are prompted again until they provide the correct input.
 
 # Accreditation
