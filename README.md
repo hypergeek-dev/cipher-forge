@@ -61,14 +61,15 @@ Example of not known password.<br>
 ## Password Generation
 
 If you want a new password suggestion, Cyber-Forge can generate a strong and unique password for you.
-<br>
-![Screenshot of the program](assets/graphics/long_psw.webp)<br><br>
-Example of long password.<br>
+
 - Choose whether to generate a new password suggestion.
 - A strong and unique password will be generated and displayed.
 <br><br>
 ![Screenshot of the program](assets/graphics/short_psw.webp)<br>
 Example of short password.<br>
+<br>
+![Screenshot of the program](assets/graphics/long_psw.webp)<br><br>
+Example of long password.<br>
 ## Password Uniqueness
 
 Cyber-Forge calculates the strength and assesment, giving you an idea of its uniqueness.
