@@ -28,7 +28,8 @@ We suggest you change it!
             if not re.match(r"^[^\x00-\x1F\x7F]+$", password):
                 return "\nThe password contains invalid characters"
 
-            return Fore.GREEN + """\nYour password is not a commonly known password.
+            return Fore.GREEN + """\nYour password is not a commonly
+known password.
 We still recommend changing it periodically.""" + Style.RESET_ALL
 
         except EOFError:
@@ -141,12 +142,16 @@ def generate_password_suggestion():
  password length(6-16): ", 6, 16)
         diceware = Diceware()
         passphrase = diceware.generate_diceware_passphrase(password_length)
-        print(f"\nGenerated Password:{Fore.BLUE} {passphrase}{Style.RESET_ALL}")
+
+        print(f"\nGenerated Password:{Fore.BLUE}" +
+              f"{passphrase}{Style.RESET_ALL}")
+
         pool_size = len(diceware.diceware_word_list) + len(string.punctuation)
         entropy = calculate_entropy(pool_size, password_length)
         strength = get_entropy_strength(entropy)
         print(f"Entropy: {humanize.intcomma(entropy)} bits")
         print(f"Strength: {strength}")
+
     except ValueError as e:
         print(f"Error: {str(e)}")
 
