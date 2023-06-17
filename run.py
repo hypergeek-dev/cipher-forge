@@ -20,15 +20,15 @@ class ComparePasswords:
             if password == "":
                 return "The password is empty"
             if password in self.common_passwords:
-                return Fore.RED + "Your password is among the 200\
- most used passwords.We suggest you change it.\
-" + Style.RESET_ALL
+                return Fore.RED + """\nYour password is among the 200
+most used passwords.We suggest you change it.
+""" + Style.RESET_ALL
 
             if not re.match(r"^[^\x00-\x1F\x7F]+$", password):
-                return "The password contains invalid characters"
+                return "\nThe password contains invalid characters"
 
-            return "Your password is not a commonly known password.\
-We still recommend changing it periodically."
+            return Fore.GREEN + """\nYour password is not a commonly known password.
+We still recommend changing it periodically.""" + Style.RESET_ALL
 
         except EOFError:
             return "Seems like your input was empty.\
@@ -118,16 +118,18 @@ def calculate_entropy(pool_size, password_length):
 
 def get_entropy_strength(entropy):
     if entropy < 28:
-        return "Very Weak; as secure as writing\
-        your password on a sticky note."
+        return """Very Weak; as secure as writing
+          your password on a sticky note."""
     elif entropy <= 35:
-        return "Weak; it might keep out your\
-        technologically-challenged grandma."
+        return """Weak; it might keep out your
+          technologically-challenged grandma."""
     elif entropy <= 59:
-        return "Reasonable; enough to fend off your annoying co-worker."
+        return """Reasonable; enough to fend off
+          your annoying co-worker."""
     elif entropy <= 127:
-        return "Strong; your financial information\
-is safer than hiding it under your mattress."
+        return """Strong; your financial information
+          is safer than hiding it under your
+          mattress."""
     else:
         return "Very Strong; hackers will weep when they see this password!"
 
@@ -138,7 +140,7 @@ def generate_password_suggestion():
  password length(6-16): ", 6, 16)
         diceware = Diceware()
         passphrase = diceware.generate_diceware_passphrase(password_length)
-        print(f"Generated Password: {passphrase}")
+        print(f"\nGenerated Password:{Fore.BLUE} {passphrase}{Style.RESET_ALL}")
         pool_size = len(diceware.diceware_word_list) + len(string.punctuation)
         entropy = calculate_entropy(pool_size, password_length)
         strength = get_entropy_strength(entropy)
@@ -180,6 +182,7 @@ def main():
 
             if choice == 1:
                 password = input("Enter a password to test: ")
+                compare_passwords = ComparePasswords()
                 result = compare_passwords.validate_common_password(password)
                 print(result)
             elif choice == 2:
