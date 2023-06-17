@@ -21,8 +21,8 @@ class ComparePasswords:
                 return "The password is empty"
             if password in self.common_passwords:
                 return Fore.RED + "Your password is among the 200\
-most used passwords.We suggest you change it.\
-" + Style.RESET_ALL + "We suggest you change it."
+ most used passwords.We suggest you change it.\
+" + Style.RESET_ALL
 
             if not re.match(r"^[^\x00-\x1F\x7F]+$", password):
                 return "The password contains invalid characters"
