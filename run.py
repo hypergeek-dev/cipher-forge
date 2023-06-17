@@ -135,7 +135,7 @@ is safer than hiding it under your mattress."
 def generate_password_suggestion():
     try:
         password_length = prompt_user_integer("Enter the desired\
-password length: ", 6, 16)
+ password length(6-16): ", 6, 16)
         diceware = Diceware()
         passphrase = diceware.generate_diceware_passphrase(password_length)
         print(f"Generated Password: {passphrase}")
