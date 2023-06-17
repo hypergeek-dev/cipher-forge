@@ -19,6 +19,7 @@
 - [Development and Deployment](#development-and-deployment)
   - [Creating the wordlists](#creating-the-wordlists)
   - [Criteria for password generation](#criteria-for-password-generation)
+  - [Methology of the passwordgenerator](#methology-of-the-passwordgenerator)
 - [Testing](#testing)
   -[Bugs](#bugs)
    - [Error Handling](#error-handling)
@@ -135,6 +136,9 @@ It is worth mentioning that the wordlists generated using the web scraper deserv
 - **Avoid Sequential or Repeated Patterns**: Passwords should not include sequential or repeated characters or patterns.
 - **Randomness**: Passwords should be generated using a strong random number generator to ensure unpredictability.
 
+## Methology of the passwordgenerator
+It is a combination of words from the wordlists with random special symbols/punctuation to create a passphrase. The generated passphrase aims to have a balanced mix of words and special symbols to enhance its strength and complexity.
+
 # Testing
 
  CI Python Linter on https://pep8ci.herokuapp.com/ gave following results
@@ -163,7 +167,7 @@ I made modifications to a specific function to address a particular problem. If 
  To avoid any problems caused by incorrect input, I added loops to the code. This way, if the user enters something wrong, they are prompted again until they provide the correct input.
 
 # Accreditation
-Dictionary.com - For the wordlists extracted from their website.<br>
+Dictionary.com - For the wordlists accessed from their website.<br>
 Nordpass.com - For providing the list of 200 most used passwords.<br>
 Iocane.com - For the scale on password strength measured in bits.<br>
 Omnicalculator.com - For the formula on how to calculate Entropy.<br>
