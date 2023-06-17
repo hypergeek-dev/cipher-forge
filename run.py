@@ -1,6 +1,7 @@
 import sys
 import random
 import string
+import humanize
 import math
 from colorama import Fore, Style
 import re
@@ -19,8 +20,10 @@ class ComparePasswords:
             if password == "":
                 return "The password is empty"
             if password in self.common_passwords:
-                return "Your password is among the 200 most used passwords.\
-We suggest you change it."
+                return Fore.RED + "Your password is among the 200\
+most used passwords.We suggest you change it.\
+" + Style.RESET_ALL + "We suggest you change it."
+
             if not re.match(r"^[^\x00-\x1F\x7F]+$", password):
                 return "The password contains invalid characters"
 
@@ -29,7 +32,7 @@ We still recommend changing it periodically."
 
         except EOFError:
             return "Seems like your input was empty.\
-Please enter something and run me again."
+                   Please enter something."
         except KeyboardInterrupt:
             return "You have pressed the Ctrl-C button."
 
@@ -44,14 +47,10 @@ class Diceware:
 
     def load_wordlists(self):
         word_list = []
-        word_list.extend(
-            self.load_wordlist_from_file(
-                "assets/wordlists/3_letter_wordlist.txt")
-        )
-        word_list.extend(
-            self.load_wordlist_from_file(
-                "assets/wordlists/4_letter_wordlist.txt")
-        )
+        word_list.extend(self.load_wordlist_from_file(
+            "assets/wordlists/3_letter_wordlist.txt"))
+        word_list.extend(self.load_wordlist_from_file(
+            "assets/wordlists/4_letter_wordlist.txt"))
         return word_list
 
     def generate_diceware_passphrase(self, passphrase_length):
@@ -60,13 +59,14 @@ class Diceware:
 
         if passphrase_length < min_length or passphrase_length > max_length:
             error_message = (
-                f"Password length must be between\
-                {min_length} and {max_length}."
+                f"Password length must be between {min_length} "
+                f"and {max_length}."
             )
             raise ValueError(error_message)
 
         num_special_symbols = passphrase_length // 3
 
+        # Generate the passphrase
         passphrase = ""
         for _ in range(num_special_symbols):
             passphrase += random.choice(self.diceware_word_list)
@@ -92,7 +92,7 @@ def prompt_user(message, valid_responses):
             response = input(message).strip().lower()
     except KeyboardInterrupt:
         print("\nProgram interrupted. Exiting...")
-        sys.exit(0)
+        sys.exit(0)  # Terminate the program gracefully
 
     return response
 
@@ -104,24 +104,11 @@ def prompt_user_integer(message, min_value, max_value):
             if min_value <= response <= max_value:
                 return response
             else:
-                print(f"Please enter a number between\
-{min_value} and {max_value}.")
+                print(f"Please enter a number between "
+                      f"{min_value} and {max_value}.")
 
         except ValueError:
             print("Invalid input. Please enter a valid number.")
-
-
-def generate_password_suggestion():
-    diceware = Diceware()
-    min_length = 6
-    max_length = 16
-    passphrase_length = prompt_user_integer(
-        f"Enter the desired password length ({min_length}-{max_length}): ",
-        min_length,
-        max_length
-    )
-    passphrase = diceware.generate_diceware_passphrase(passphrase_length)
-    print("Generated password:", Fore.CYAN + passphrase + Style.RESET_ALL)
 
 
 def calculate_entropy(pool_size, password_length):
@@ -140,9 +127,25 @@ def get_entropy_strength(entropy):
         return "Reasonable; enough to fend off your annoying co-worker."
     elif entropy <= 127:
         return "Strong; your financial information\
-        is safer than hiding it under your mattress."
+is safer than hiding it under your mattress."
     else:
         return "Very Strong; hackers will weep when they see this password!"
+
+
+def generate_password_suggestion():
+    try:
+        password_length = prompt_user_integer("Enter the desired\
+password length: ", 6, 16)
+        diceware = Diceware()
+        passphrase = diceware.generate_diceware_passphrase(password_length)
+        print(f"Generated Password: {passphrase}")
+        pool_size = len(diceware.diceware_word_list) + len(string.punctuation)
+        entropy = calculate_entropy(pool_size, password_length)
+        strength = get_entropy_strength(entropy)
+        print(f"Entropy: {humanize.intcomma(entropy)} bits")
+        print(f"Strength: {strength}")
+    except ValueError as e:
+        print(f"Error: {str(e)}")
 
 
 def main():
@@ -154,49 +157,49 @@ def main():
     print(" ##::: ##:: ##:: ##:::::::: ##:::: ##: ##::::::: ##::. ##:::::")
     print(". ######::'####: ##:::::::: ##:::: ##: ########: ##:::. ##::::")
     print(":......:::....::..:::::::::..:::::..::........::..:::::..:::::")
-    print("'########::'#######::'########:::'######:::'########:         ")
-    print(" ##.....::'##.... ##: ##.... ##:'##... ##:: ##.....::         ")
-    print(" ##::::::: ##:::: ##: ##:::: ##: ##:::..::: ##:::::::         ")
-    print(" ######::: ##:::: ##: ########:: ##::'####: ######:::         ")
-    print(" ##...:::: ##:::: ##: ##.. ##::: ##::: ##:: ##...::::         ")
-    print(" ##::::::: ##:::: ##: ##::. ##:: ##::: ##:: ##:::::::         ")
-    print(" ##:::::::. #######:: ##:::. ##:. ######::: ########:         ")
+    print("'########::'#######::'########:::'######:::'########: ")
+    print(" ##.....::'##.... ##: ##.... ##:'##... ##:: ##.....:: ")
+    print(" ##::::::: ##:::: ##: ##:::: ##: ##:::..::: ##::::::: ")
+    print(" ######::: ##:::: ##: ########:: ##::'####: ######::: ")
+    print(" ##...:::: ##:::: ##: ##.. ##::: ##::: ##:: ##...:::: ")
+    print(" ##::::::: ##:::: ##: ##::. ##:: ##::: ##:: ##::::::: ")
+    print(" ##:::::::. #######:: ##:::. ##:. ######::: ########: ")
 
     print(
-        Fore.CYAN + "Introducing Cipher-Forge:\
- Your Advanced Password Generator" +
+        Fore.CYAN + "Introducing Cipher-Forge: "
+        "Your Advanced Password Generator" +
         Style.RESET_ALL + "\n"
     )
+    print("Let's start by checking your current password against ")
+    print("a list of commonly known passwords.\n")
 
     compare_passwords = ComparePasswords()
 
     try:
         while True:
-            print("\nPlease choose one of the following options:")
-            print("1. Test your code for commonality")
-            print("2. Generate password")
-            print("3. Exit")
+            print("\nMenu:")
+            print("1. Test for common passwords.")
+            print("2. Generate password.")
+            print("3. Exit.")
+            choice = prompt_user_integer("Enter your choice\
+(1, 2, or 3): ", 1, 3)
 
-            choice = prompt_user("Enter your choice (1-3): ", ["1", "2", "3"])
-
-            if choice == "1":
+            if choice == 1:
                 password = input("Enter a password to test: ")
                 result = compare_passwords.validate_common_password(password)
                 print(result)
-
-            elif choice == "2":
+            elif choice == 2:
                 generate_password_suggestion()
-
-            elif choice == "3":
-                print("Thank you for using Cipher-Forge. Stay safe!")
+            elif choice == 3:
                 break
-
             else:
                 print("Invalid choice. Please enter a valid option.")
 
     except KeyboardInterrupt:
         print("\nProgram interrupted. Exiting...")
         sys.exit(0)
+
+    print("\nThank you for using Cipher-Forge. Stay safe!")
 
 
 if __name__ == "__main__":
