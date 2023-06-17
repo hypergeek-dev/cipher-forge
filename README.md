@@ -57,7 +57,7 @@ Cyber-Forge checks if your password is a commonly known password.
 ![Screenshot of the program](assets/graphics/most_know_psw.webp)<br>
 Example of known password.<br>
 ![Screenshot of the program](assets/graphics/not_most_know_psw.webp)<br>
-Example of not known password.<br>
+Example of unknown password.<br>
 
 ## Password Generation
 
@@ -160,6 +160,7 @@ It is a combination of words from the wordlists with random special symbols/punc
  CI Python Linter on https://pep8ci.herokuapp.com/ gave following results
 
 ### 1. Run
+### **Results:**
 #### 3 occasions of "expected 2 blank lines, found 1"
 #### 9 occasions of "line too long (100 > 79 characters)"
 
@@ -192,7 +193,7 @@ I made modifications to a specific function to address a particular problem. If 
  To avoid any problems caused by incorrect input, I added loops to the code. This way, if the user enters something wrong, they are prompted again until they provide the correct input.
 
 # Accreditation
-Dictionary.com - For the wordlists accessed from their website.<br>
+Dictionary.com - For the wordlists retrieved from their website.<br>
 Nordpass.com - For providing the list of 200 most used passwords.<br>
 Iocane.com - For the scale on password strength measured in bits.<br>
 Omnicalculator.com - For the formula on how to calculate Entropy.<br>
