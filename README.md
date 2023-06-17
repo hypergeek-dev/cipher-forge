@@ -21,7 +21,7 @@
   - [Criteria for password generation](#criteria-for-password-generation)
   - [Methology of the passwordgenerator](#methology-of-the-passwordgenerator)
 - [Testing](#testing)
-  -[Bugs](#bugs)
+   - [Bugs](#bugs)
    - [Error Handling](#error-handling)
    - [Exception Handling](#exception-handling)
    - [Looping](#looping)
