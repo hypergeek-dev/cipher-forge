@@ -69,7 +69,7 @@ If you want a new password suggestion, Cyber-Forge can generate a strong and uni
 ![Screenshot of the program](assets/graphics/short_psw.webp)<br>
 Example of short password.<br>
 <br>
-![Screenshot of the program](assets/graphics/long_psw.webp)<br><br>
+![Screenshot of the program](assets/graphics/long_psw.webp)<br>
 Example of long password.<br>
 ## Password Uniqueness
 
