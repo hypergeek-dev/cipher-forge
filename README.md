@@ -58,7 +58,7 @@ If you want a new password suggestion, Cyber-Forge can generate a strong and uni
 
 ## Password Uniqueness
 
-Cyber-Forge calculates the number of possible combinations for the generated password, giving you an idea of its uniqueness.
+Cyber-Forge calculates the strength and the number of possible combinations for the generated password, giving you an idea of its uniqueness.
 
 # Getting Started
 
@@ -78,9 +78,9 @@ Cyber-Forge calculates the number of possible combinations for the generated pas
   pip install -r requirements.txt
    ```
 5. To run the program itself: 
-    ```shell
-    run.py
-   ```
+  ```shell
+  run.py
+  ```
 
 # User Stories
 
@@ -163,10 +163,11 @@ I made modifications to a specific function to address a particular problem. If 
  To avoid any problems caused by incorrect input, I added loops to the code. This way, if the user enters something wrong, they are prompted again until they provide the correct input.
 
 # Accreditation
-I like to thank dictionary.com for the wordlists i gained from accessing their website.
-and Nordpass.com for their list of 200 most used passwords.
-I also like to thank Iocane.com for the scale on passwords-strength measured in bits.
-And omnicalculator.com for the formular on how to calculate Entropy.
+Dictionary.com - For the wordlists accessed from their website.<br>
+Nordpass.com - For providing the list of 200 most used passwords.<br>
+Iocane.com - For the scale on password strength measured in bits.<br>
+Omnicalculator.com - For the formula on how to calculate Entropy.<br>
+Vecteezy.com - For their photo "Mockup laptop computer with blank screen"
 
 # Credits
 For code inspiration, help, and advice, the following resources were used:
