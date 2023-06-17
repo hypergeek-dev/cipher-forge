@@ -156,6 +156,7 @@ It is a combination of words from the wordlists with random special symbols/punc
  CI Python Linter on https://pep8ci.herokuapp.com/ gave following results
 
 ### 1. Run
+### **Results:**
 #### 3 occasions of "expected 2 blank lines, found 1"
 #### 9 occasions of "line too long (100 > 79 characters)"
 
