@@ -68,7 +68,6 @@ class Diceware:
 
         num_special_symbols = passphrase_length // 3
 
-        # Generate the passphrase
         passphrase = ""
         for _ in range(num_special_symbols):
             passphrase += random.choice(self.diceware_word_list)
@@ -94,7 +93,7 @@ def prompt_user(message, valid_responses):
             response = input(message).strip().lower()
     except KeyboardInterrupt:
         print("\nProgram interrupted. Exiting...")
-        sys.exit(0)  # Terminate the program gracefully
+        sys.exit(0)
 
     return response
 
@@ -207,4 +206,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
