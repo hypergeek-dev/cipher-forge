@@ -168,13 +168,7 @@ def main():
     print(
         Fore.CYAN + "Introducing Cipher-Forge: "
         "Your Advanced Password Generator" +
-        Style.RESET_ALL + "\n"
-    )
-    print("Let's start by checking your current password against ")
-    print("a list of commonly known passwords.\n")
-
-    compare_passwords = ComparePasswords()
-
+        Style.RESET_ALL + "\n")
     try:
         while True:
             print("\nMenu:")
